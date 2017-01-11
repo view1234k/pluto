@@ -1,0 +1,216 @@
+.animated{
+  animation-duration: 1.5s;
+  animation-delay: 1s;
+  animation-fill-mode: both;
+}
+
+
+
+
+
+
+
+
+
+
+.fadeInDown{
+  animation-name: fadeInDown;
+}
+
+.fadeInDownSmall{
+  animation-name: fadeInDownSmall;
+}
+
+.fadeInUp{
+  animation-name: fadeInUp;
+}
+
+.slideInLeft{
+  animation-name: slideInLeft;
+}
+
+.slideInRight{
+  animation-name: slideInRight;
+}
+
+.slideInRightTop{
+  animation-name: slideInRightTop;
+}
+
+.slideInRightBottom{
+  animation-name: slideInRightBottom;
+}
+
+.slideInLeftTop{
+  animation-name: slideInLeftTop;
+}
+
+.slideInLeftBottom{
+  animation-name: slideInLeftBottom;
+}
+
+.slideToRight{
+  animation-name: slideToRight;
+}
+
+.slideToLeft{
+  animation-name: slideToLeft;
+}
+
+.roolToLeft{
+  animation-name: roolToLeft;
+}
+
+.rotateZ{
+  animation-name: rotateZ;
+  animation-delay: 0s;
+  animation-duration: 3s;
+}
+
+
+@keyframes fadeInUp {
+  from{
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to{
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotateZ {
+  from{
+    transform: rotateZ(180deg);
+  }
+  to{
+    transform: none;
+  }
+}
+
+@keyframes roolToLeft {
+  from{
+    transform: translateX(50px) rotateZ(45deg);
+    opacity: 0;
+  }
+  to{
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes slideToRight {
+  from{
+    transform: skew(-25deg) translateX(-200%);
+  }
+  to{
+    transform: skew(-25deg) none;
+  }
+}
+
+@keyframes slideToLeft {
+  from{
+    transform: skew(-25deg) translateX(200%);
+  }
+  to{
+    transform: skew(-25deg);
+  }
+}
+
+@keyframes slideInLeft {
+  from{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+@keyframes slideInRight {
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+
+}
+
+@keyframes fadeInDown {
+  from{
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInDownSmall{
+  from{
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes grayscale {
+  from{
+    filter: brightness(60%);
+  }
+  to{
+    filter: none;
+  }
+
+}
+
+@keyframes slideInRightTop {
+  from{
+    opacity: 0;
+    transform: translate(100px,-100px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slideInRightBottom {
+  from{
+    opacity: 0;
+    transform: translate(100px,100px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slideInLeftTop {
+  from{
+    opacity: 0;
+    transform: translate(-100px,-100px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slideInLeftBottom {
+  from{
+    opacity: 0;
+    transform: translate(-100px,100px);
+  }
+  to{
+    opacity: 1;
+    transform: none;
+  }
+}

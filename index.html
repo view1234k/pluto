@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Pluto冥王星</title>
+    <link rel="stylesheet" type="text/css" href="assist/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="assist/css/media.css" />
+    <link rel="stylesheet" type="text/css" href="assist/css/contentbox.css" />
+    <link rel="stylesheet" type="text/css" href="assist/css/animation.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="assist/img/icon/pluto.ico">
+    <script type="text/javascript" src="assist/js/main.js"></script>
+    <script type="text/javascript" src="assist/js/login.js"></script>
+    <script type="text/javascript" src="assist/js/wow.js"></script>
+    <script type="text/javascript" src="assist/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="assist/js/slide.js"></script>
+</head>
+
+<body onload="onload()">
+  <div id="loadingMask">
+    <div class="loading_box">
+      <div class="la-pacman la-3x">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+      </div>
+      <span>Pluto冥王星工作室</span>
+    </div>
+  </div>
+
+    <header id="header-background">
+
+        <div id="header" class="container">
+            <div class="logo">
+                <a href="">
+                    <h1>Pluto</h1>
+                    <h2>冥王星</h2>
+                </a>
+            </div>
+            <div id="profile">
+                <div id="settingbox">
+                    <ul>
+                        <li onclick="on_Mypage()"><i class="fa fa-user-o"></i>個人頁面</li>
+                        <li onclick="on_Editpage()"><i class="fa fa-edit"></i>編輯頁面</li>
+                        <li onclick="Logout()"><i class="fa fa-sign-out"></i>登出</li>
+                    </ul>
+                </div>
+                <div id="panel">
+                    <i class="fa fa-caret-right"></i>
+                    <span id="pro_account">劉嘉勛(Pluto_XN)</span>
+                </div>
+                <img id="profile_avatar" src="/personalpage/default.png">
+
+            </div>
+            <div id="navbar">
+                              <div id="login_loader" class="loader"></div>
+                <ul>
+                    <li id="login_btn" onclick="show_login()">
+                        <p>登入</p>
+                    </li>
+                    <li class="current"><a href="#slider">首頁</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="login">
+            <div class="log_title">
+                <p>Login登入</p>
+                <span id="close" class="fa fa-close fa-lg" onclick="login_close()"></span>
+            </div>
+            <div class="log_form">
+                <div class="inputbox">
+                    <span><i class="fa fa-user-o fa-lg"></i></span>
+                    <input id="login_id" type="text" maxLength="20" placeholder="ID">
+                </div>
+                <div class="inputbox">
+                    <span><i class="fa fa-lock fa-lg" style="padding-left:2px"></i></span>
+                    <input id="login_password" type="password" maxLength="20" placeholder="Password">
+                </div>
+                <div id="log_form_btn" class="log_btn" onclick="login(this)">
+                    <span>登入</span>
+                    <div class="loader"></div>
+                </div>
+                <div id="log_flag">
+                    <span><i class="fa fa-close fa-lg"></i>帳號或密碼錯誤</span>
+                </div>
+                <div class="log_reg">
+                    <p>還不是會員嗎?現在<a href="#" onclick="show_reg()">立即註冊</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="reg">
+            <div class="log_title">
+                <p>會員註冊</p>
+                <span id="close" class="fa fa-close fa-lg" onclick="reg_close()"></span>
+            </div>
+            <div class="reg_form">
+                <div id="reg_form" class="input_box">
+                    <p>名字</p>
+                    <input id="reg_name" type="text" maxlength="10" placeholder="Name" onblur="check(this)">
+                    <span>*必填</span>
+                    <p>帳號</p>
+                    <input id="reg_id" type="text" maxlength="20" placeholder="ID" onblur="check(this)">
+                    <span>*必填</span>
+                    <p>密碼</p>
+                    <input id="reg_pw1" type="password" placeholder="password" onblur="check(this)">
+                    <span>*必填</span>
+                    <p>密碼確認</p>
+                    <input id="reg_pw2" type="password" placeholder="password" onblur="check(this)">
+                    <span>*必填</span>
+                    <p>E-mail</p>
+                    <input id="reg_email" type="email" placeholder="email" onblur="check(this)">
+                    <span>*必填</span>
+                </div>
+                <div id="reg_btn" class="disable">
+                    <span onclick="register(this)">註冊</span>
+                    <div class="loader"></div>
+                </div>
+                <div id="checkmark">
+                  <div class="check_circle"></div>
+                  <div class="check_arrow"></div>
+                  <span>註冊成功!</span>
+                </div>
+            </div>
+        </div>
+        <div id="login_mask"></div>
+
+
+    </header>
+
+
+
+    <section id="banner">
+        <div class="btn_left" onclick="btn_click(0)"></div>
+        <div class="btn_right" onclick="btn_click(1)"></div>
+
+
+
+        <div id="pointer">
+            <ul>
+                <li class="thispoint"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div id="slider" class="active">
+            <ul>
+                <li style="background-image: url(assist/img/pic1.jpg);">
+                    <div id="textbox0">
+                        <div id="logo" class="fadeInDown">歡迎來到Pluto.</div>
+                        <div id="title" class="fadeInDownSmall">自稱年營收超過80億美元的公司</div>
+                    </div>
+                </li>
+
+
+
+
+
+
+                <li style="background-image: url(assist/img/pic2.jpg);">
+
+                    <div id="textbox1">
+                        <div id="logo" class="fadeInDown">做好做滿是我們的宗旨</div>
+                        <div id="sign1" class="slideInLeft">堅持</div>
+                        <div id="dot1" class="slideInLeft" style="left:41.5%;animation-delay:0.5s"></div>
+                        <div id="sign2" class="slideInLeft">品質</div>
+                        <div id="dot2" class="slideInLeft" style="left:57%;animation-delay:1.5s"></div>
+                        <div id="sign3" class="slideInLeft">優質</div>
+                    </div>
+                </li>
+
+                <li style="background-image: url(assist/img/pic3.jpg);">
+                    <div id="textbox2">
+                      <div id="logo" class="fadeInUp">IDEA</div>
+                      <div id="title" class="fadeInDown">我們需要有創意的你</div>
+                    </div>
+                </li>
+
+                <li style="background-image: url(assist/img/pic4.jpg);">
+                    <div id="textbox3">
+                      <div id="logo" class="slideInLeft">不斷創新</div>
+                      <div id="title" class="slideInRight">失敗的背後我們不懼挑戰</div>
+                    </div>
+                </li>
+
+                <li style="background-image: url(assist/img/pic5.jpg);">
+                  <div id="textbox4">
+                    <div id="logo" class="slideInLeft">Sugar</div>
+                    <div id="title" class="slideInRight">攝取糖分是為了走更長遠的路</div>
+                  </div>
+                </li>
+
+
+                <li style="background-image: url(assist/img/pic1.jpg);">
+                  <div id="textbox5">
+                      <div id="logo" class="fadeInDown animated" style="animation-play-state: running; visibility: visible;">歡迎來到Pluto.</div>
+                      <div id="title" class="fadeInDownSmall animated" style="animation-play-state: running; visibility: visible;">自稱年營收超過80億美元的公司</div>
+                  </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </section>
+
+
+
+    <section id="inner">
+        <div class="iconbar fadeInDownSmall wow" style="animation-delay:1.5s;animation-fill-mode:both;">
+
+            <article>
+                <a href="#intro"><img src="assist/img/icon/icon1.png">
+                    <h1>我們是誰</h1>
+                    <p>公司介紹</p>
+                </a>
+            </article>
+
+            <!--<article>
+                <img src="assist/img/icon/icon2.png">
+                <h1>我們要做什麼</h1>
+                <p>項目介紹</p>
+            </article>-->
+
+            <article>
+                <a href="#cycle"><img src="assist/img/icon/icon3.png">
+                    <h1>我們要怎麼做</h1>
+                    <p>產品及營運方法</p>
+                </a>
+            </article>
+
+            <article>
+                <a href="#struct"><img src="assist/img/icon/icon4.png">
+                    <h1>內部組織</h1>
+                    <p>強而有力的結構體</p>
+                </a>
+            </article>
+
+            <article>
+                <a href="#strategy">
+                    <img src="assist/img/icon/icon5.png">
+                    <h1>發展計畫</h1>
+                    <p>長期的戰略目標</p>
+                </a>
+            </article>
+
+        </div>
+    </section>
+
+    <section id="company">
+        <div class="box wow fadeInDown">
+            <h1>Pluto冥王星高端數位科技有限股份公司</h1>
+            <p>混亂交錯的世代，我們傳承古人智慧、延續賢人的理念、開拓哲學的思想，磨合至此成為精緻的良藥，由夢想建構，由信念築起，
+              而服務是永遠我們的使命、品質要求是我們責任、工作認真是我們態度，我們來自冥王星，將帶你前往全新的世界。</p>
+        </div>
+    </section>
+
+    <section id="intro">
+        <div class="contentbox">
+            <img class="pic0" src="assist/img/icon/intro.png">
+            <img class="pic1" src="assist/img/712-1.jpg">
+            <img class="pic2" src="assist/img/712-2.jpg">
+            <div class="arclogo slideInLeft wow">
+                <img src="assist/img/icon/arclogo1.png"></img>
+                <img src="assist/img/icon/arclogo2.png"></img>
+                <img src="assist/img/icon/arclogo3.png"></img>
+            </div>
+            <div class="right-box">
+                我們是一支專業的團隊。我們的成員擁有多年的資訊安全專業技術背景，來自國內知名安全公司的一線骨幹。
+                <br><br> 我們是一支年輕的團隊。我們的平均年齡僅有19歲，充滿了朝氣和創新精神。
+                <br><br> 我們是一支專注的團隊。我們堅信，安全的品牌源自客戶的信任。只有專注，才能做好安全。
+
+            </div>
+        </div>
+    </section>
+
+    <section id="staff">
+
+        <div class="staffbox">
+          <img class="staff_title" src="assist/img/icon/staff.png">
+            <article>
+                <div class="circle wow fadeInDown" onclick="window.open('http://pluto.mfvps.cn/personalpage/?id=Pluto_9456XN')">
+                    <img src="assist/img/staff1.jpg">
+                </div>
+                <h1>劉嘉勛</h1>
+                <div class="dialog">
+                    <p>主任工程師</p>
+                </div>
+                <div class="content">
+                    <p>少抱怨，多去做。</p>
+                    <ul>
+                        <li>程式編寫、除錯</li>
+                        <li>入口網站編寫與設計</li>
+                        <li>登入系統後台之架設</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <div class="circle circle_color1  wow fadeInDown" onclick="window.open('http://pluto.mfvps.cn/personalpage/?id=Pluto_Ace')">
+                    <img src="assist/img/staff2.jpg">
+                </div>
+                <h1>朱諺群</h1>
+                <div class="dialog dialog_color1">
+                    <p>創辦人</p>
+                </div>
+                <div class="content content_color1">
+                    <p>鑑往知來就要去蕪存菁。</p>
+                    <ul>
+                        <li>入口網站版面草圖設計</li>
+                        <li>組織工作室及未來發展</li>
+                        <li>統合及管理資訊</li>
+                    </ul>
+                </div>
+            </article>
+            <article>
+                <div class="circle circle_color2 wow fadeInDown" onclick="window.open('http://pluto.mfvps.cn/personalpage/?id=Pluto_King')">
+                    <img src="assist/img/staff3.jpg">
+                </div>
+                <h1>江維明</h1>
+                <div class="dialog dialog_color2">
+                    <p>執行長</p>
+                </div>
+                <div class="content content_color2">
+                    <p>你所走的每一步，都會影響你的未來。</p>
+                    <ul>
+                        <li>韓國STL拍廣告</li>
+                        <li>觀光介紹英國的景點</li>
+                        <li>英國K演唱會現場直播</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+<section id="cycle">
+    <img class="cycle_title" src="assist/img/icon/cycle.png">
+    <div class="cyclebox wow rotateZ">
+
+        <div class="cycle1">
+            <img class="wow slideInRightTop" src="assist/img/icon/cycle1.png" style="animation-delay:0.5s">
+            <div class="signboxRight wow slideInRight" style="animation-delay: 2.3s">
+                <h1>個人能力分析</h1>
+                    <p>依照擅長項目去分配工作</p>
+                </div>
+            </div>
+
+            <div class="cycle2">
+                <img class="wow slideInLeft" src="assist/img/icon/cycle2.png" style="animation-delay:0.8s">
+                <div class="signboxRight wow slideInRight" style="animation-delay: 2.3s">
+                    <h1>操作方式科學</h1>
+                    <p>按照生理時鐘去工作及休息</p>
+                </div>
+            </div>
+
+            <div class="cycle3">
+                <img class="wow slideInRightBottom" src="assist/img/icon/cycle3.png" style="animation-delay:1.1s">
+                <div class="signboxRight wow slideInRight" style="top: 140px;right: -240px;animation-delay: 2.3s">
+                    <h1>資金準備</h1>
+                    <p>資金不足則打工存款</p>
+                </div>
+            </div>
+
+            <div class="cycle4">
+                <img class="wow slideInLeftBottom" src="assist/img/icon/cycle4.png" style="animation-delay:1.4s">
+                <div class="signboxLeft wow slideInLeft" style="top:140px;animation-delay: 2.3s">
+                    <h1>效益預測</h1>
+                    <p>每次工作內容希望達到的目標</p>
+                </div>
+            </div>
+
+            <div class="cycle5">
+                <img class="wow slideInRight" src="assist/img/icon/cycle5.png" style="animation-delay:1.7s">
+                <div class="signboxLeft  wow slideInLeft" style="left: -270px;animation-delay: 2.3s">
+                    <h1>工作進度表</h1>
+                    <p>事先安排工作內容及時間</p>
+                </div>
+            </div>
+
+            <div class="cycle6">
+                <img class="wow slideInLeftTop" src="assist/img/icon/cycle6.png" style="animation-delay:2s">
+                <div class="signboxLeft  wow slideInLeft" style="animation-delay: 2.3s">
+                    <h1>工作內容記錄</h1>
+                    <p>每次工作內容希望達到的目標</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="struct">
+        <img class="struct_title" src="assist/img/icon/struct.png">
+
+        <div class="tree">
+            <ul class="wow fadeInDown" style="animation-delay:0s">
+                <li>
+                    <p class="main">董事會</p>
+                    <div class="bubble correct" style="top: -170px;left: 404px;">
+                        <div><img src="assist/img/staff1.jpg"></div>
+                        <div><img src="assist/img/staff2.jpg"></div>
+                        <div><img src="assist/img/staff3.jpg"></div>
+                        <div><img src="assist/img/staff4.jpg"></div>
+                    </div>
+                    <ul class="main_ul wow fadeInDown" style="padding-top:40px;animation-delay:0.5s">
+                        <li>
+                            <p class="main2">執行長</p>
+                            <div class="bubble" style="top: -170px;left: 593px;">
+                                <div><img src="assist/img/staff2.jpg"></div>
+                            </div>
+                            <ul class="wow fadeInDown" style="animation-delay:1s;">
+                                <li>
+                                    <p>主任工程</p>
+                                    <div class="bubble" style="top: -170px;left: 173px;">
+                                        <div><img src="assist/img/staff1.jpg"></div>
+                                    </div>
+                                    <ul class="vertical wow fadeInDown" style="animation-delay:1.5s">
+                                        <li>
+                                            <p>研發部</p>
+                                            <div class="bubble" style="top: -170px;left: -23px;">
+                                                <div><img src="assist/img/str1.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay:2s">
+                                                <li>
+                                                    <p>電子開發部</p>
+                                                </li>
+                                                <li>
+                                                    <p>化工開發部</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>資料部</p>
+                                            <div class="bubble" style="top: -170px;left: -23px;">
+                                                <div><img src="assist/img/str2.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay: 2s">
+                                                <li>
+                                                    <p>採購部</p>
+                                                </li>
+                                                <li>
+                                                    <p>倉儲部</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>生產部</p>
+                                            <div class="bubble" style="top: -170px;left: 21px;">
+                                                <div><img src="assist/img/str3.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay: 2s">
+                                                <li>
+                                                    <p>生管部</p>
+                                                </li>
+                                                <li>
+                                                    <p>電子廠</p>
+                                                </li>
+                                                <li>
+                                                    <p>化工廠</p>
+                                                </li>
+                                                <li>
+                                                    <p>生技部</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>質管部</p>
+                                            <div class="bubble" style="top: -170px;left: -23px;">
+                                                <div><img src="assist/img/str4.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay: 2s">
+                                                <li>
+                                                    <p>質管部</p>
+                                                </li>
+                                                <li>
+                                                    <p>質檢部</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="correct_li">
+                                    <p class="correct_p">行政副總</p>
+                                    <div class="bubble" style="top: -170px;left: 97px;">
+                                        <div><img src="assist/img/staff3.jpg"></div>
+                                    </div>
+                                    <ul class="vertical correct_ul wow fadeInDown" style="animation-delay:1.5s">
+                                        <li>
+                                            <p>行政人事部</p>
+                                            <div class="bubble" style="top: -170px;left: 22px;">
+                                                <div><img src="assist/img/str5.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay:2s">
+                                                <li>
+                                                    <p>行政部</p>
+                                                </li>
+                                                <li>
+                                                    <p>人力資源部</p>
+                                                </li>
+                                                <li>
+                                                    <p>法務部</p>
+                                                </li>
+                                                <li>
+                                                    <p>總務室</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>資訊管理部</p>
+                                            <div class="bubble" style="top: -170px;left: -23px;">
+                                                <div><img src="assist/img/str6.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay:2s">
+                                                <li>
+                                                    <p>電腦室</p>
+                                                </li>
+                                                <li>
+                                                    <p>文館中心</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <p>經營副總</p>
+                                    <div class="bubble" style="top: -170px;left: 193px;">
+                                        <div><img src="assist/img/staff4.jpg"></div>
+                                    </div>
+                                    <ul class="vertical wow fadeInDown" style="animation-delay:1.5s">
+                                        <li>
+                                            <p>財務部</p>
+                                            <div class="bubble" style="top: -170px;left: -1px;">
+                                                <div><img src="assist/img/str7.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay:2s">
+                                                <li>
+                                                    <p>會計部</p>
+                                                </li>
+                                                <li>
+                                                    <p>出納部</p>
+                                                </li>
+                                                <li>
+                                                    <p>證券部</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>股份部</p>
+                                            <div class="bubble" style="top: -170px;left: -23px;">
+                                                <div><img src="assist/img/str8.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay:2s">
+                                                <li>
+                                                    <p>股份制辦公室</p>
+                                                </li>
+                                                <li>
+                                                    <p>對外投資部</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>行銷部</p>
+                                            <div class="bubble" style="top: -170px;left: 22px;">
+                                                <div><img src="assist/img/str9.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay:2s">
+                                                <li>
+                                                    <p>商務中心</p>
+                                                </li>
+                                                <li>
+                                                    <p>市場部</p>
+                                                </li>
+                                                <li>
+                                                    <p>銷售部</p>
+                                                </li>
+                                                <li>
+                                                    <p>售後服務部</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <p>國際部</p>
+                                            <div class="bubble" style="top: -170px;left: -23px;">
+                                                <div><img src="assist/img/str10.jpg"></div>
+                                            </div>
+                                            <ul class="wow fadeInDown" style="animation-delay:2s">
+                                                <li>
+                                                    <p>外貿部</p>
+                                                </li>
+                                                <li>
+                                                    <p>加工部</p>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="process">
+        <img class="process_title" src="assist/img/icon/process.png">
+        <div class="bar wow slideToRight" style="animation-delay:0s">
+            <div class="content_right">
+                <img src="assist/img/pro1.jpg">
+                <p>在腦袋中進行一場思想風暴，由空白的網頁中一步一步築起圖像及版面</p>
+            </div>
+        </div>
+        <div class="bar bar_color1 wow slideToLeft" style="animation-delay:0.3s">
+            <div class="content_left">
+                <img src="assist/img/pro2.jpg">
+                <p>與配色問題進行一場辯論，設計修改再設計在修改不斷重複不斷嘗試</p>
+            </div>
+        </div>
+        <div class="bar bar_color2 wow slideToRight" style="animation-delay:0.6s">
+            <div class="content_right">
+                <img src="assist/img/pro3.jpg">
+                <p>問題思考與討論，程式撰寫之問題與解決方法</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="strategy">
+        <img class="strategy_title" src="assist/img/icon/strategy.png">
+        <img class="strategy_BG" src="assist/img/icon/strategyBG.jpg">
+        <img class="strategy_BG2 wow slideInRight" src="assist/img/icon/strategyBG2.png">
+
+        <div class="titlebox wow slideInRight" style="animation-delay:0s;">
+            <h1>高瞻遠矚</h1>
+            <h2>制勝未來</h2>
+        </div>
+
+        <div class="contentbox">
+            <div>
+                <img class="wow roolToLeft" src="assist/img/icon/strategy1.png">
+                <span class="textbox wow slideInRight">
+        <p>無論一小步還是一大步</p>
+        <p>都要帶動人類的進步</p>
+      </span>
+
+            </div>
+
+            <div>
+                <img class="wow roolToLeft" src="assist/img/icon/strategy2.png">
+                <span class="textbox wow slideInRight">
+        <p>發展員工&nbsp;&nbsp;&nbsp;成就客戶</p>
+        <p>回報股東&nbsp;&nbsp;&nbsp;強大國家</p>
+
+      </span>
+            </div>
+
+            <div>
+                <img class="wow roolToLeft" src="assist/img/icon/strategy3.png">
+                <span class="textbox wow slideInRight">
+        <p>合作共贏&nbsp;&nbsp;&nbsp;務實創新</p>
+      </span>
+            </div>
+
+            <div>
+                <img class="wow roolToLeft" src="assist/img/icon/strategy4.png">
+                <span class="textbox wow slideInRight">
+        <p>誠信  務實  敬業  創新</p>
+      </span>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="objective">
+        <img class="objective_title" src="assist/img/icon/objective.png">
+        <div class="objbox">
+            <article>
+                <div class="solid_circle">
+                    <div class="contentbox">
+                        <h1>銷售額突破</h1>
+                        <h2>5億美元</h2>
+                    </div>
+                </div>
+
+                <div class="dialog wow fadeInUp">
+                    <p>將在未來成為亞洲地區遊戲公司龍頭</p>
+                </div>
+            </article>
+            <article>
+                <div class="solid_circle solid_circle_color1">
+                    <div class="contentbox">
+                        <h1>加盟店超過</h1>
+                        <h2>6千家</h2>
+                    </div>
+                </div>
+                <div class="dialog dialog_color1 wow fadeInUp">
+                    <p>在各領域發展，並成為多元遊戲公司</p>
+                </div>
+            </article>
+            <article>
+                <div class="solid_circle solid_circle_color2">
+                    <div class="contentbox">
+                        <h1>產品銷售覆蓋</h1>
+                        <h2>7大洲</h2>
+                    </div>
+                </div>
+                <div class="dialog dialog_color2 wow fadeInUp">
+                    <p>成為亞洲公司龍頭，並以世界為目標</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <footer id="info">
+        <div class="containbox">
+            <p><i class="fa fa-map-marker fa-lg"></i>833高雄市鳥松區濱山街80號7樓712號</p>
+            <p><i class="fa fa-commenting"></i>LINE : Pluto冥王星</p>
+            <p><i class="fa fa-clock-o"></i>周一至周六 09:00 ~ 23:00</p>
+            <p><i class="fa fa-phone"></i>創辦人 0980-753-947</p>
+            <p><i class="fa fa-envelope"></i>Pluto_XAK@gmail.com</p>
+
+            <div class="linkbox">
+                <a href="https://zh-tw.facebook.com/people/%E6%9C%B1%E8%AB%BA%E7%BE%A4/100003490004709">
+                    <p><i class="fa fa-facebook-square fa-2x"></i></p>
+                </a>
+                <a href="#">
+                    <p><i class="fa fa-twitter-square fa-2x"></i></p>
+                </a>
+                <a href="#">
+                    <p><i class="fa fa-vimeo-square fa-2x"></i></p>
+                </a>
+                <a href="#">
+                    <p><i class="fa fa-github fa-2x"></i></p>
+                </a>
+
+            </div>
+
+
+            <hr>
+
+            <div class="logo" style="top:inherit;position:absolute">
+                <a href="#"><h1>Pluto</h1>
+        <h2>冥王星</h2></a>
+            </div>
+            <div class="rightbox">
+                <p><i class="fa fa-copyright" style="margin:0"></i>pluto冥王星</p>
+            </div>
+        </div>
+    </footer>
+</body>

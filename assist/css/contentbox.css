@@ -1,0 +1,237 @@
+#textbox0 {
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+#textbox0 #logo {
+  position: absolute;
+    top: 35%;
+    width: 100%;
+    font-size: 76px;
+    font-family: fashionlight, MZ;
+    color: white;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+    visibility: hidden;
+}
+
+#textbox0 #title {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    font-size: 19px;
+    font-family: MZ;
+    color: #A9A9A9;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    visibility: hidden;
+}
+
+
+/*************************************************/
+
+#textbox1 {
+    text-align: center;
+    font-size: 78px;
+    font-family: MZ;
+    height: 100%;
+    position: relative;
+}
+
+#textbox1 #logo {
+    position: absolute;
+    top: 300px;
+    left: 42.5%;
+    font-size: 26px;
+    font-family: MZ;
+    color: #A9A9A9;
+    animation-fill-mode: both;
+    animation-delay: 2.5s;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+
+#textbox1 #sign1 {
+    position: absolute;
+    top: 39%;
+    color: white;
+    left: 30%;
+    animation-delay: 0.0001s;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+
+#textbox1 #sign2 {
+    position: absolute;
+        top: 39%;
+    color: white;
+    left: 45.5%;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+
+#textbox1 #sign3 {
+    position: absolute;
+        top: 39%;
+    color: white;
+    left: 60.5%;
+    animation-delay: 2s;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+
+#textbox1 #dot1 {
+    top: 49%;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: white;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+#textbox1 #dot2 {
+    top: 49%;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 7px;
+    background-color: white;
+    animation-fill-mode: both;
+    animation-play-state: paused;
+    visibility: hidden;
+}
+/*********************/
+#textbox2{
+  text-align: center;
+  font-size: 78px;
+  font-family: MZ;
+  height: 100%;
+  position: relative;
+}
+#textbox2 #logo{
+  position: absolute;
+  width: 100%;
+  top: 28%;
+  font-size: 110px;
+  font-family: fantasy;
+  color: white;
+  animation-fill-mode: both;
+  animation-delay: 0.1s;
+  animation-play-state: paused;
+  visibility: hidden;
+}
+#textbox2 #title{
+  position: absolute;
+  font-size: 45px;
+  top: 53%;
+    width: 100%;
+  font-family: MZ;
+  color: white;
+  animation-fill-mode: both;
+  animation-delay: 0.6s;
+  animation-play-state: paused;
+  visibility: hidden;
+}
+/********************************/
+#textbox3{
+  text-align: center;
+  font-size: 78px;
+  font-family: MZ;
+  height: 100%;
+  position: relative;
+}
+#textbox3 #logo{
+  position: absolute;
+  width: 100%;
+  top: 28%;
+  left: -27%;
+  font-size: 110px;
+  font-family: MZ;
+  color: white;
+  animation-fill-mode: both;
+  animation-delay: 0.1s;
+  animation-play-state: paused;
+  visibility: hidden;
+}
+#textbox3 #title{
+  position: absolute;
+  font-size: 45px;
+  top: 53%;
+  left: 27%;
+  font-family: MZ;
+  color: white;
+  animation-fill-mode: both;
+  animation-delay: 0.6s;
+  animation-play-state: paused;
+  visibility: hidden;
+}
+/**********************************/
+#textbox4{
+  text-align: center;
+  font-size: 78px;
+  font-family: MZ;
+  height: 100%;
+  position: relative;
+}
+#textbox4 #logo{
+  position: absolute;
+  width: 100%;
+  top: 28%;
+  left: -27%;
+  font-size: 110px;
+  font-family: MZ;
+  color: #333;
+  animation-fill-mode: both;
+  animation-delay: 0.1s;
+  animation-play-state: paused;
+  visibility: hidden;
+}
+#textbox4 #title{
+  position: absolute;
+  font-size: 45px;
+  top: 53%;
+  left: 27%;
+  font-family: MZ;
+  color: #111;
+  animation-fill-mode: both;
+  animation-delay: 0.6s;
+  animation-play-state: paused;
+  visibility: hidden;
+}
+/******************************/
+#textbox5 {
+    text-align: center;
+    position: relative;
+    height: 100%;
+}
+
+#textbox5 #logo {
+  position: absolute;
+    top: 35%;
+    width: 100%;
+    font-size: 76px;
+    font-family: fashionlight, MZ;
+    color: white;
+    animation-delay: 0.5s;
+    animation-fill-mode: both;
+    visibility: hidden;
+}
+
+#textbox5 #title {
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    font-size: 19px;
+    font-family: MZ;
+    color: #A9A9A9;
+    animation-delay: 1s;
+    animation-fill-mode: both;
+    visibility: hidden;
+}

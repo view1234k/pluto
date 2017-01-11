@@ -1,0 +1,368 @@
+@font-face {
+    font-family: "fashionlight";
+    src: url('../../assist/fonts/Fashion Fetish Light.ttf');
+}
+
+@font-face {
+    font-family: "MZ";
+    src: local("微軟正黑體");
+}
+@font-face {
+    font-family: "REZ";
+    src: url('../../assist/fonts/REZ.ttf');
+}
+
+
+
+
+*{
+  margin: 0;
+  font-family: MZ;
+}
+body{
+  background: #e6e6e6;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#content_box{
+  width: 90%;
+  top: 70px;
+  padding-bottom: 3em;
+  background: white;
+  margin: 1em auto;
+  position: relative;
+  border-radius: 1.6em;
+  box-shadow: 0 0 20px -3px #333;
+}
+
+/******************************/
+#home_box{
+  width: 100%;
+  height: 20em;
+  margin: 0;
+  border-top-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  background-image: url('../bg.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 0 20px -3px #333;
+}
+#avatar{
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  border: 0.5em solid white;
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  background: white;
+  top: 15em;
+}
+#avatar img{
+  width: 10em;
+  height: 10em;
+}
+/*************************/
+#profileS{
+  width: 90%;
+  margin: 7em auto 3em auto;
+}
+.account{
+  text-align: center;
+}
+.account p:first-child{
+  font-size: 1.8em;
+  font-weight: bolder;
+}
+.account p:last-child{
+  font-size: 1em;
+  color: #888;
+}
+.account p:last-child::before{
+  content: '@';
+}
+.info{
+  margin: 1.5em auto;
+  width: 50%;
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
+}
+/************************/
+#navbar{
+  background: #e6e6e6;
+  height: 3.7em;
+  width: 100%;
+}
+#navbar ul{
+  padding: 0;
+  text-align: center;
+}
+#navbar li{
+  color: #333;
+  font-size: 1.2em;
+  display: inline-block;
+  padding: 0.8em 2.5em;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.selected{
+  border-bottom: 0.3em solid #1a9fea;
+}
+/************************/
+#article_box{
+  width: 50%;
+  margin: 10em auto;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+#article_box ul{
+  width: 200%;
+  padding: 0;
+  transition: 1s;
+}
+#article_box li{
+  float: left;
+  width: 50%;
+  display: inline-block;
+}
+
+#introduce{
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: #333;
+}
+.box{
+  width: 80%;
+  margin: auto;
+  border: 3px solid #c6c6c6;
+  padding: 2em 3em;
+}
+.box div{
+  padding: 0.1em;
+  border-bottom: 2px solid #cecece;
+}
+.box span:first-child{
+  margin-right: 0.3em;
+}
+/******************************/
+#edit_box{
+  width: 50%;
+  margin: 3em auto;
+  overflow: hidden;
+  transition: 0.3s;
+}
+#edit_box ul{
+  width: 500%;
+  padding: 0;
+  transition: 1s;
+}
+#edit_box li{
+  float: left;
+  width: 20%;
+  display: inline-block;
+}
+/*********************************/
+.cropArea{
+  width: 80%;
+  height: 300px;
+  background: transparent;
+  margin: 3em auto;
+}
+/**************************************/
+#edit_acc{
+  text-align: center;
+}
+#edit_acc input{
+  margin-bottom: 3em;
+  width: 10em;
+  height: 1.5em;
+  transition: 0.5s;
+}
+#edit_acc input:focus{
+  width: 20em;
+}
+/*****************************/
+#edit_welcome div{
+  margin: auto;
+  width: 80%;
+  margin-top: 3em;
+}
+
+#edit_intro div{
+  margin: auto;
+  width: 80%;
+  margin-top: 3em;
+}
+.textarea{
+  width: 100%;
+  height: 20em;
+  font-size: 1em;
+}
+/************************************/
+#edit_info{
+  margin-top: 3em;
+}
+.info_title{
+  text-align: center;
+  font-size: 1.3em;
+}
+#info_box{
+  height: 18em;
+  font-size: 1.2em;
+  overflow-y: scroll;
+  padding: 1em 6em 0 7em;
+}
+#info_box div{
+  margin: 1em 0;
+  text-align: center;
+}
+#info_box input{
+  width: 15em;
+  transition: 0.3s;
+  margin-right: 1em;
+}
+#info_box input:focus{
+  width: 70%;
+}
+
+.btn_box{
+  display: flex;
+}
+
+
+/**************************************/
+#acc_flag{
+  color: red;
+  visibility: hidden;
+}
+
+#saveAll_btn{
+  position: absolute;
+  right: 10%;
+  bottom: 3em;
+}
+#saveAll_btn span{
+  color: white;
+  font-family: MZ;
+  padding: 0.5em 1.5em;
+  background: #1a9fea;
+  cursor: pointer;
+}
+
+#saveAll_loader{
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: -0.3em;
+}
+
+
+.add_btn{
+  margin: 3em auto;
+  text-align: center;
+}
+
+.add_btn span{
+  color: white;
+  font-family: MZ;
+  padding: 0.5em 1.5em;
+  background: orange;
+  cursor: pointer;
+}
+/*******************************************/
+.btn_avatar{
+  margin: 8em auto;
+  padding: 1em;
+  text-align: center;
+}
+.btn_avatar span{
+  color: white;
+  font-size: 1.5em;
+  border-radius: 0.8em;
+  background: #1a9fea;
+  padding: 0.3em 3em;
+  cursor: pointer;
+}
+/**************************/
+#croppie_panel{
+  padding: 5em;
+  width: 40em;
+  position: absolute;
+  margin: 0 auto;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-radius: 1.1em;
+  background: white;
+  box-shadow: 1px 1px 16px -3px #333;
+  visibility: hidden;
+  z-index: 10;
+  transition: 0.3s;
+  opacity: 0;
+}
+#croppie_panel::before{
+  content: '';
+  background: #1a9fea;
+  width: 100%;
+  height: 4em;
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  box-shadow: 1px 1px 16px -3px #333;
+}
+.panel_close{
+  color: white;
+  top: 0.3em;
+  right: 3.5em;
+  position: absolute;
+}
+.panel_close span{
+  position: absolute;
+  transition: 0.3s;
+  padding: 0.3em;
+  cursor: pointer;
+}
+.panel_close span:hover{
+  transform: rotateZ(90deg);
+}
+.panel_btn{
+  text-align: center;
+  margin-top: 3em;
+}
+.panel_btn span{
+  color: white;
+  font-size: 1.3em;
+  padding: 0.6em 1.5em;
+  background: #3ADF00;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+.panel_btn input{
+  display: none;
+}
+#mask{
+  position: fixed;
+  background: black;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  transition: 0.3s;
+  visibility: hidden;
+}
+/*****************************/
+#panel_checkmark{
+  left: 45%;
+  top: 20%;
+  position: absolute;
+  visibility: hidden;
+}

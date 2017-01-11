@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/nav.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="/assist/img/icon/pluto.ico">
+    <script type="text/javascript" src="../assist/js/login.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/logX.js"></script>
+    <title></title>
+  </head>
+  <body onload="index_onload()">
+
+    <header id="header-background">
+
+        <div id="header" class="container">
+            <div class="logo">
+                <a href="http://pluto.mfvps.cn/">
+                    <h1>Pluto</h1>
+                    <h2>冥王星</h2>
+                </a>
+            </div>
+            <div id="profile">
+                <div id="settingbox">
+                    <ul>
+                        <li onclick="on_Mypage()"><i class="fa fa-user-circle-o"></i>個人頁面</li>
+                        <li onclick="on_Editpage()"><i class="fa fa-edit"></i>編輯頁面</li>
+                        <li onclick="Logout()"><i class="fa fa-sign-out"></i>登出</li>
+                    </ul>
+                </div>
+                <div id="panel">
+                    <i class="fa fa-caret-right"></i>
+                    <span id="pro_account">劉嘉勛(Pluto_XN)</span>
+                </div>
+                <img id="profile_avatar" src="/personalpage/default.png">
+
+            </div>
+            <div id="navbarX">
+                          <div id="login_loader" class="loader"></div>
+                <ul>
+                    <li id="login_btn" onclick="show_login()">
+                        <p>登入</p>
+                    </li>
+                    <li class="current"><a href="http://pluto.mfvps.cn/">首頁</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div id="login">
+            <div class="log_title">
+                <p>Login登入</p>
+                <span id="close" class="fa fa-close fa-lg" onclick="login_close()"></span>
+            </div>
+            <div class="log_form">
+                <div class="inputbox">
+                    <span><i class="fa fa-user-o fa-lg"></i></span>
+                    <input id="login_id" type="text" maxLength="20" placeholder="ID">
+                </div>
+                <div class="inputbox">
+                    <span><i class="fa fa-lock fa-lg" style="padding-left:2px"></i></span>
+                    <input id="login_password" type="password" maxLength="20" placeholder="Password">
+                </div>
+                <div id="log_form_btn" class="log_btn" onclick="login(this)">
+                    <span>登入</span>
+                    <div class="loader panel_loader"></div>
+                </div>
+                <div id="log_flag">
+                    <span><i class="fa fa-close fa-lg"></i>帳號或密碼錯誤</span>
+                </div>
+                <div class="log_reg">
+                    <p>還不是會員嗎?現在<a href="#" onclick="show_reg()">立即註冊</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="reg">
+            <div class="log_title">
+                <p>會員註冊</p>
+                <span id="close" class="fa fa-close fa-lg" onclick="reg_close()"></span>
+            </div>
+            <div class="reg_form">
+                <div id="reg_form" class="input_box">
+                    <p>名字</p>
+                    <input id="reg_name" type="text" maxlength="10" placeholder="Name" onblur="check(this)">
+                    <span>*必填</span>
+                    <p>帳號</p>
+                    <input id="reg_id" type="text" maxlength="20" placeholder="ID" onblur="check(this)">
+                    <span>*必填</span>
+                    <p>密碼</p>
+                    <input id="reg_pw1" type="password" placeholder="password" onblur="check(this)">
+                    <span>*必填</span>
+                    <p>密碼確認</p>
+                    <input id="reg_pw2" type="password" placeholder="password" onblur="check(this)">
+                    <span>*必填</span>
+                    <p>E-mail</p>
+                    <input id="reg_email" type="email" placeholder="email" onblur="check(this)">
+                    <span>*必填</span>
+                </div>
+                <div id="reg_btn" class="disable">
+                    <span onclick="register(this)">註冊</span>
+                    <div class="loader panel_loader"></div>
+                </div>
+                <div id="checkmark">
+                  <div class="check_circle"></div>
+                  <div class="check_arrow"></div>
+                  <span>註冊成功!</span>
+                </div>
+            </div>
+        </div>
+        <div id="login_mask"></div>
+
+
+    </header>
+
+
+
+    <section id="content_box">
+      <section id="home_box">
+        <div id="avatar">
+          <img src="/personalpage/default.png">
+        </div>
+      </section>
+      <section id="profileS">
+        <div class="account">
+          <p id="pro_name"></p>
+          <p id="pro_id"></p>
+        </div>
+        <div id="welcome" class="info">
+          -歡迎來到我的個人頁面-
+        </div>
+
+      </section>
+      <div id="navbar">
+        <ul>
+          <li onclick="slide(0,this)" class="selected">自我介紹</li>
+          <li onclick="slide(1,this)">個人資料</li>
+        </ul>
+      </div>
+      <section id="article_box">
+        <ul id="article_ul">
+          <li>
+            <div id="introduce">
+              -此人尚未編輯自我介紹-
+            </div>
+
+          </li>
+<li id="information">
+  <div id="index_info_box" class="box">
+  </div>
+</li>
+        </ul>
+      </section>
+    </section>
+
+
+    <footer id="info">
+        <div class="containbox">
+            <p><i class="fa fa-map-marker fa-lg"></i>833高雄市鳥松區濱山街80號7樓712號</p>
+            <p><i class="fa fa-commenting"></i>LINE : Pluto冥王星</p>
+            <p><i class="fa fa-clock-o"></i>周一至周六 09:00 ~ 23:00</p>
+            <p><i class="fa fa-phone"></i>創辦人 0980-753-947</p>
+            <p><i class="fa fa-envelope"></i>Pluto_XAK@gmail.com</p>
+
+            <div class="linkbox">
+                <a href="https://zh-tw.facebook.com/people/%E6%9C%B1%E8%AB%BA%E7%BE%A4/100003490004709">
+                    <p><i class="fa fa-facebook-square fa-2x"></i></p>
+                </a>
+                <a href="#">
+                    <p><i class="fa fa-twitter-square fa-2x"></i></p>
+                </a>
+                <a href="#">
+                    <p><i class="fa fa-vimeo-square fa-2x"></i></p>
+                </a>
+                <a href="#">
+                    <p><i class="fa fa-github fa-2x"></i></p>
+                </a>
+
+            </div>
+
+
+            <hr>
+
+            <div class="logo" style="top:inherit;position:absolute">
+                <a href="#"><h1>Pluto</h1>
+        <h2>冥王星</h2></a>
+            </div>
+            <div class="rightbox">
+                <p><i class="fa fa-copyright" style="margin:0"></i>pluto冥王星</p>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
